@@ -1,0 +1,38 @@
+{
+    "name": "spn",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nodemon ./bin/www",
+        "clean": "shx rm -rf dist",
+        "copy": "shx mkdir dist && shx cp -r public views dist/",
+        "compile": "npm run clean && npm run copy && babel \"./{,!(dist|node_modules)/**/}*.js\" bin/www -d dist",
+        "start": "npm run compile && node ./dist/bin/www"
+    },
+    "dependencies": {
+        "babel": "^6.23.0",
+        "bcrypt": "^3.0.7",
+        "body-parser": "^1.19.0",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.4",
+        "debug": "~2.6.9",
+        "express": "~4.16.1",
+        "express-session": "^1.17.0",
+        "helmet": "^3.21.2",
+        "http-errors": "~1.6.3",
+        "jade": "~1.11.0",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.24.0",
+        "moment-timezone": "^0.5.27",
+        "mongoose": "^5.8.7",
+        "morgan": "~1.9.1",
+        "node-pre-gyp": "^0.14.0",
+        "node-uuid": "^1.4.8",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
+        "passport-local-mongoose": "^6.0.1",
+        "shx": "^0.3.2",
+        "swagger-ui-express": "^4.1.2",
+        "sync-request": "^6.1.0"
+    }
+}
